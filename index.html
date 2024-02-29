@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/superhero/bootstrap.min.css"
-    />
+    <title>JS Basics</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header>
@@ -107,6 +104,12 @@
         Code la vie
         <span class="badge bg-primary rounded-pill">script 6</span>
       </a>
+      <a onclick="changeScript(7)"
+        class="list-group-item d-flex list-group-item-action justify-content-between align-items-center"
+      >
+        Acné-Bot
+        <span class="badge bg-primary rounded-pill">script 7</span>
+      </a>
       </ul>
     </main>
 
@@ -120,5 +123,39 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+
+  <!-- Remove the container if you want to extend the Footer to full width. -->
+
+  <footer class="bg-dark text-center text-white mt-5">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="mailto:annie.herieau@gmail.com" target="_blank" role="button"
+        ><i class="bi-envelope-fill"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/annie-herieau/"  target="_blank" role="button"
+        ><i class="bi-linkedin"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/annieherieau" target="_blank" role="button"
+        ><i class="bi-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3 bg-secondary">
+    © 2024 Annie Hérieau
+    <a class="text-white" href=""></a>
+  </div>
+  <!-- Copyright -->
+</footer>
   </body>
 </html>
