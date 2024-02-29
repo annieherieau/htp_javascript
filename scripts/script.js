@@ -8,6 +8,12 @@ function changeScript(value) {
   document.getElementById("myScript").appendChild(s);
 }
 
+// Eléments HTML
+const TITLE =document.getElementById('script_title');
+const OUTPUT_1 =document.getElementById('output_1');
+const FORM =document.getElementById('input_form');
+const OUTPUT_2 =document.getElementById('output_2');
+
 const entrepreneurs = [
   { first: "Steve", last: "Jobs", year: 1955 },
   { first: "Oprah", last: "Winfrey", year: 1954 },

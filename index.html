@@ -111,8 +111,42 @@
         <span class="badge bg-primary rounded-pill">script 7</span>
       </a>
       </ul>
-
-      <p id="demo"></p>
+      <!-- const TITLE -->
+      <h2 class="m-3" id="script_title"></h2>
+      <div class="px-5 mb-3">
+        <!-- const OUTPUT_1 -->
+        <p class="" id="output_1"></p>
+      </div>
+      <!-- const FORM -->
+      <div id="input_form" class="px-5 mb-3 invisible">
+        <form action="index.html" method="post">
+          <div class="mb-3 row column justify-content-end">
+            
+              <label id="input_label"  for="user_input" class="form-label">input label</label>
+              <div class="form-group col-6">
+              <input
+                type="text"
+                name="user_input"
+                id="user_input"
+                class="form-control"
+                placeholder="user_input"
+                aria-describedby="helpId"
+              />
+            </div>
+            <div class="form-group col-6">
+              <button type="submit" class="btn btn-primary ">
+                Envoyer
+              </button>
+            </div>
+          </div>
+          
+        </form>
+      </div>
+      <div class="px-5 mb-3">
+        <!-- const OUTPUT_2 -->
+        <p class="" id="output_2"></p>
+      </div>
+      
     </main>
 
     <!-- SCRIPT JS -->

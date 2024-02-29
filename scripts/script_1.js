@@ -1,4 +1,2 @@
-console.log("****** Script 1 : Bonjour ******");
-console.log("Bonjour Monde!");
-
-alert("****** Script 1 : Bonjour ******\nBonjour Monde!")
+TITLE.innerHTML = "Script 1 : Bonjour";
+OUTPUT_1.innerHTML= "Bonjour Monde!";
