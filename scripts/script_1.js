@@ -1,4 +1,7 @@
-console.log("****** Script 1 : Bonjour ******");
-console.log("Bonjour Monde!");
+function hello(){
+  TITLE.innerHTML = "Script 1 : Bonjour";
+  OUTPUT_1.innerHTML= "Bonjour Monde!";
+  FORM_CONTAINER.className = "invisible";
+}
 
-alert("****** Script 1 : Bonjour ******\nBonjour Monde!")
+hello();

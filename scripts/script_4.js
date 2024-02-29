@@ -1,10 +1,6 @@
-console.log("****** Script 4 : Startup Nation ******");
-
 // nés dans les années 70: filtrer [1970-1980[
 function seventies(array) {
   let result = array.filter((val) => val.year >= 1970 && val.year < 1980);
-  console.log("Entrepreneurs nés dans les années 70:");
-  console.log(result);
   return result;
 }
 
@@ -14,8 +10,6 @@ function names(array) {
   array.forEach((e) => {
     result.push(`${e.first} ${e.last}`);
   });
-  console.log("Prénoms noms :");
-  console.log(result);
   return result;
 }
 
@@ -29,8 +23,6 @@ function ages(array) {
       age: 2024 - value.year
     }
   );
-  console.log("Ages :");
-  console.log(result);
   return result;
 }
 
@@ -47,8 +39,6 @@ function alphaOrder(array){
     }
     return 0;
   })
-  console.log("Ordre alphabetique des noms :")
-  console.log(array)
   return array
 
 }
@@ -60,7 +50,6 @@ function getUserInput() {
   string += "[2] Prénoms noms\n";
   string += "[3] Ages\n";
   string += "[4] Ordre alphabetique des noms\n";
-  string += "[q] Quitter\n";
   let user_input = prompt(
     string
   );
@@ -69,49 +58,43 @@ function getUserInput() {
 
 // affichage de l'array
 function print(array) {
-  let string = "";
+  let string = "<ul>";
   for (let value of array) {
     if (typeof value == "string") {
-      string += value + "\n";
+      string += "<li>" + value + "</li>";
     } else {
-      string += `${value.first} ${value.last} (${value.year})`;
+      string += "<li>" + `${value.first} ${value.last} (${value.year})`;
       if (value.age) {
         string += ` Age: ${value.age} ans`;
       }
-      string += "\n";
+      string += "</li>";
     }
   }
+  string += "</ul>";
   return string;
 }
 
 // perform menu et choix user pour chaque fonction
 function perform(){
+  TITLE.innerHTML = "Script 4 : Startup Nation";
+  
   let user_input = getUserInput();
     switch (user_input) {
       case '1': 
-        alert("Nés dans les années 70:\n" + print(seventies(entrepreneurs)));
-        perform();
+        OUTPUT_1.innerHTML= "<strong>Entrepreneurs nés dans les années 70:</strong><br><br>" + print(seventies(entrepreneurs));
         break;
       case '2': 
-        alert("Prénoms et Noms : \n" + print(names(entrepreneurs)));
-        perform();
+        OUTPUT_1.innerHTML= "<strong>Prénoms et Noms :</strong><br><br>" + print(names(entrepreneurs));
         break;
       case '3': 
-        alert("Ages : \n" + print(ages(entrepreneurs)));
-        perform();
+        OUTPUT_1.innerHTML= "<strong>Ages :</strong><br><br>" + print(ages(entrepreneurs));
         break;
       case '4': 
-        alert("Ordre alphabetique des noms : \n" + print(alphaOrder(entrepreneurs)));
-        perform();
+        OUTPUT_1.innerHTML= "<strong>Ordre alphabetique des noms :</strong><br><br>" + print(alphaOrder(entrepreneurs));
         break;
-      case 'q':
-        break; 
       default:
-        perform()
         break;
-    
   }
-
 }
 
 perform();

@@ -1,5 +1,3 @@
-console.log("****** Script 7 : Acné-Bot ******");
-
 // phrase du user
 function getUserInput(){
   let user_input = prompt("****** Script 7 : Acné-Bot ******\n[q] Quitter\nÉcris une phrase :");
@@ -39,17 +37,10 @@ function acneBot(input){
   return "Balek.";
 }
 
-// 
+// Exécution
 function perform(){
-  let user_input = getUserInput();
-  switch (user_input){
-    case 'q':
-      break;
-    default:
-      alert(acneBot(user_input));
-      perform()
-      break;
-  }
+  TITLE.innerHTML = "Script 7 : Acné-Bot";
+  OUTPUT_1.innerHTML = acneBot(getUserInput());
 }
 
 perform();

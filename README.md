@@ -6,7 +6,6 @@ User inputs with prompt().
 Outputs in Window.alert() and console.
 
 ## Demo
-
 https://bit.ly/3TfRBud
 
 

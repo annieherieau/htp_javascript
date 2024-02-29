@@ -1,12 +1,23 @@
 function changeScript(value) {
-  var s = document.createElement("script");
+  let s = document.createElement("script");
   s.type = "text/javascript";
   s.src = "scripts/script_" + value + ".js";
-  s.innerHTML = null;
-  s.id = "map";
-  document.getElementById("myScript").innerHTML = "";
+  // s.innerHTML = null;
+  // s.id = "myScript";
+  // document.getElementById("myScript").innerHTML = "";
   document.getElementById("myScript").appendChild(s);
 }
+
+// Eléments HTML
+const TITLE =document.getElementById('script_title');
+const OUTPUT_1 =document.getElementById('output_1');
+const FORM_CONTAINER =document.getElementById('form_container');
+const HIDDEN = document.getElementById('hidden');
+const LABEL = document.getElementById('input_label');
+const USER_INPUT = document.getElementById('user_input');
+const HELP_TEXT = document.getElementById('helpText');
+const OUTPUT_2 =document.getElementById('output_2');
+
 
 const entrepreneurs = [
   { first: "Steve", last: "Jobs", year: 1955 },

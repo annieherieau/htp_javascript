@@ -28,13 +28,18 @@ function print(array){
 }
 
 function perform(rna){
-  string = `****** Script 6 : Code la vie ******\n${rna}\n`;
+
   let codons = getCodons(rna);
   let amino_acids = decodeRna(codons);
-  string += `${print(codons)}\n${print(amino_acids)}`;
-  console.log(string)
-  return string;
+  let string = `${print(codons)}<br>${print(amino_acids)}`;
+
+  TITLE.innerHTML = "Script 6 : Code la vie";
+  if (OUTPUT_1.innerHTML == ''){
+    OUTPUT_1.innerHTML = rna + "<br>" + string;
+  }else{
+    OUTPUT_2.innerHTML = rna + "<br>" + string;
+  }
 }
 
-alert(perform('CCGUCGUUGCGCUACAGC'));
-alert(perform('CCUCGCCGGUACUUCUCG'));
+perform('CCGUCGUUGCGCUACAGC');
+perform('CCUCGCCGGUACUUCUCG');

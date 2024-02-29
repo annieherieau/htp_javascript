@@ -8,7 +8,7 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+      <nav id='top' class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="https://bit.ly/3TfRBud">JS Basics</a>
           <button
@@ -25,38 +25,38 @@
           <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a onclick="changeScript(1)" class="nav-link" href="#"
-                  >Script 1</a
+                <button onclick="changeScript(1)" class="nav-link"
+                  >Script 1</button
                 >
               </li>
               <li class="nav-item">
-                <a onclick="changeScript(2)" class="nav-link" href="#"
-                  >Script 2</a
+                <button onclick="changeScript(2)" class="nav-link" 
+                  >Script 2</button
                 >
               </li>
               <li class="nav-item">
-                <a onclick="changeScript(3)" class="nav-link" href="#"
-                  >Script 3</a
+                <button onclick="changeScript(3)" class="nav-link" 
+                  >Script 3</button
                 >
               </li>
               <li class="nav-item">
-                <a onclick="changeScript(4)" class="nav-link" href="#"
-                  >Script 4</a
+                <button onclick="changeScript(4)" class="nav-link" 
+                  >Script 4</button
                 >
               </li>
               <li class="nav-item">
-                <a onclick="changeScript(5)" class="nav-link" href="#"
-                  >Script 5</a
+                <button onclick="changeScript(5)" class="nav-link"
+                  >Script 5</button
                 >
               </li>
               <li class="nav-item">
-                <a onclick="changeScript(6)" class="nav-link" href="#"
-                  >Script 6</a
+                <button onclick="changeScript(6)" class="nav-link"
+                  >Script 6</button
                 >
               </li>
               <li class="nav-item">
-                <a onclick="changeScript(7)" class="nav-link" href="#"
-                  >Script 7</a
+                <button onclick="changeScript(7)" class="nav-link" 
+                  >Script 7</button
                 >
               </li>
             </ul>
@@ -67,52 +67,88 @@
     <main class="container">
       <h1 class="my-5">JavaScript Basics</h1>
       <ul class="list-group">
-        <a onclick="changeScript(1)"
+        <button onclick="changeScript(1)"
           class="list-group-item d-flex list-group-item-action justify-content-between align-items-center"
         >
           Bonjour monde
           <span class="badge bg-primary rounded-pill">script 1</span>
-      </a>
-        <a onclick="changeScript(2)"
+        </button>
+        <button onclick="changeScript(2)"
           class="list-group-item d-flex list-group-item-action justify-content-between align-items-center"
         >
           Factorielle
           <span class="badge bg-primary rounded-pill">script 2</span>
-        </a>
-        <a onclick="changeScript(3)"
+        </button>
+        <button onclick="changeScript(3)" 
           class="list-group-item d-flex list-group-item-action justify-content-between align-items-center"
         >
           Pyramide de Mario
           <span class="badge bg-primary rounded-pill">script 3</span>
-        </a>
-        <a onclick="changeScript(4)"
+        </button>
+        <button onclick="changeScript(4)" 
           class="list-group-item d-flex list-group-item-action justify-content-between align-items-center"
         >
           Startup Nation
           <span class="badge bg-primary rounded-pill">script 4</span>
-        </a>
-        <a onclick="changeScript(5)"
+        </button>
+        <button onclick="changeScript(5)" 
           class="list-group-item d-flex list-group-item-action justify-content-between align-items-center"
         >
           Bibliothécaire
           <span class="badge bg-primary rounded-pill">script 5</span>
-        </a>
-      </a>
-      <a onclick="changeScript(6)"
-        class="list-group-item d-flex list-group-item-action justify-content-between align-items-center"
-      >
-        Code la vie
-        <span class="badge bg-primary rounded-pill">script 6</span>
-      </a>
-      <a onclick="changeScript(7)"
-        class="list-group-item d-flex list-group-item-action justify-content-between align-items-center"
-      >
-        Acné-Bot
-        <span class="badge bg-primary rounded-pill">script 7</span>
-      </a>
+        </button>
+        </button>
+        <button onclick="changeScript(6)" 
+          class="list-group-item d-flex list-group-item-action justify-content-between align-items-center"
+        >
+          Code la vie
+          <span class="badge bg-primary rounded-pill">script 6</span>
+        </button>
+        <button onclick="changeScript(7)" 
+          class="list-group-item d-flex list-group-item-action justify-content-between align-items-center"
+        >
+          Acné-Bot
+          <span class="badge bg-primary rounded-pill">script 7</span>
+        </button>
       </ul>
 
-      <p id="demo"></p>
+      <!-- const TITLE -->
+      <h2 class="m-3" id="script_title"></h2>
+      <div class="px-5 ">
+        <!-- const OUTPUT_1 -->
+        <p class="mb-3" id="output_1"></p>
+      
+        <!-- const FORM
+        <div id="form_container" class="invisible">
+          <form name='input_form' action="/index.html" method="get">
+            <div class="mb-3 row column justify-content-end">
+              
+                <label id="input_label"  for="user_input" class="form-label"></label>
+                <div class="form-group col-6">
+                <input type="hidden" name="script" id="hidden" value="">
+                <input
+                  type="text"
+                  name="user_input"
+                  id="user_input"
+                  class="form-control"
+                  placeholder="user_input"
+                  aria-describedby="helpId"
+                />
+                <small id="'helpText"></small>
+              </div>
+              <div class="form-group col-6">
+                <button onclick="validateInput()" type="submit" class="btn btn-primary">
+                  Envoyer
+                </button>
+              </div>
+            </div>
+            
+          </form>
+        </div> -->
+        <!-- const OUTPUT_2 -->
+        <p class="my-3" id="output_2"></p>
+      </div>
+      
     </main>
 
     <!-- SCRIPT JS -->
