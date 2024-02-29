@@ -1,5 +1,6 @@
 console.log("****** Script 3 : Pyramide de Mario ******");
 
+// choix du user
 function getUserInput() {
   let user_input = prompt(
     "****** Script 3 : Pyramide de Mario ******\nCombien d'étages veux-tu ?"
@@ -7,6 +8,7 @@ function getUserInput() {
   return user_input;
 }
 
+// afficher une pyramide inversée
 function pyramid(number){
 let string_alert = '';
 let string_console = ''
@@ -19,4 +21,5 @@ let j = number;
   return string_alert;
 }
 
+// perform
 alert(pyramid(getUserInput()))
