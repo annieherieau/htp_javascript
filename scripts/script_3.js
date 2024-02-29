@@ -1,4 +1,3 @@
-console.log("****** Script 3 : Pyramide de Mario ******");
 
 // choix du user
 function getUserInput() {
@@ -10,16 +9,15 @@ function getUserInput() {
 
 // afficher une pyramide inversée
 function pyramid(number){
-let string_alert = '';
-let string_console = ''
+let string = '';
 let j = number;
   for (let i = 1; i <= number; i++) {
-    string_console += ' '.repeat(j-i) + '#'.repeat(i)+'\n';
-    string_alert += '  '.repeat(j-i) + '#'.repeat(i)+'\n';
+    string +='&nbsp;&nbsp;&nbsp;'.repeat(j-i) + '#'.repeat(i)+'<br>';
   }
-  console.log(`Pyramide de ${number} étages:\n${string_console}`);
-  return string_alert;
+
+  TITLE.innerHTML = "Script 3 : Pyramide de Mario";
+  OUTPUT_1.innerHTML = string ;
 }
 
 // perform
-alert(pyramid(getUserInput()))
+pyramid(getUserInput())
