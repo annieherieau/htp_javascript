@@ -1,5 +1,6 @@
 console.log("****** Script 5 : Bibliothécaire ******\n ");
 
+// menu et choix du user
 function getUserInput() {
   let string = "****** Script 5 : Bibliothécaire ******\n\n";
   string += "[1] Est-ce que tous les livres ont été au moins empruntés une fois\n";
@@ -15,6 +16,7 @@ function getUserInput() {
   return user_input;
 }
 
+// afficher l'array
 function print(array) {
   let string = "";
   for (let value of array) {
@@ -28,6 +30,7 @@ function print(array) {
   return string;
 }
 
+// Empruntés. Faux si au moins 1 rented == 0
 function borrowedOnce(array){
   let result = true;
   for (const book in array) {
@@ -42,6 +45,7 @@ function borrowedOnce(array){
   return result;
 }
 
+// Le livre le plus empruté (rented reduce max)
 function moreBorrowed(array){
   let result = array.reduce(
     (acc, val) => { return (acc && acc.rented > val.rented) ? acc : val; }
@@ -51,6 +55,7 @@ function moreBorrowed(array){
   return `${result.title} (${result.rented} fois)`;
 }
 
+// Le livre le moins empruté (rented reduce min)
 function lessBorrowed(array){
   let result = array.reduce(
     (acc, val) => { return (acc && acc.rented < val.rented) ? acc : val; }
@@ -60,19 +65,20 @@ function lessBorrowed(array){
   return `${result.title} (${result.rented} fois)`;
 }
 
+// trouver le livre avec id
 function findBook(array, id){
-  let result = 'aucun';
+  let result = false;
   for (let book of array) {
     if (book.id == parseInt(id)){
       result = book.title;
       break;
     } 
   }
-  console.log("Trouve le livre avec l'ID: 873495");
-  console.log(result);
+  console.log(`Trouve le livre avec l'ID: 873495\n${result}`);
   return result;
 }
 
+// supprimer un livre
 function deleteBook(array, id){
   let result = '';
   let result_id = '';
@@ -89,14 +95,15 @@ function deleteBook(array, id){
   return array;
 }
 
+// classer par ordre alphabetique du nom (attention casse)
 function sortBooks(array){
   array.sort((a, b) => {
-    let nameA = a.title.toUpperCase();
-    let nameB = b.title.toUpperCase();
-    if (nameA < nameB){
+    let titleA = a.title.toUpperCase();
+    let titleB = b.title.toUpperCase();
+    if (titleA < titleB){
       return -1;
     }
-    if (nameA < nameB){
+    if (titleA > titleB){
       return 1;
     }
     return 0;
@@ -106,6 +113,7 @@ function sortBooks(array){
   return array;
 }
 
+// perform avec menu des 6 fonction
 function perform(){
   let id = '';
   let user_input = getUserInput();
