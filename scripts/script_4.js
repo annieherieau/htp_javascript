@@ -1,22 +1,6 @@
-console.clear();
 console.log("****** Script 4 : Startup Nation ******");
 
-function print(array) {
-  let string = "";
-  for (let value of array) {
-    if (typeof value == "string") {
-      string += value + "\n";
-    } else {
-      string += `${value.first} ${value.last} (${value.year})`;
-      if (value.age) {
-        string += ` Age: ${value.age} ans`;
-      }
-      string += "\n";
-    }
-  }
-  return string;
-}
-
+// nés dans les années 70: filtrer [1970-1980[
 function seventies(array) {
   let result = array.filter((val) => val.year >= 1970 && val.year < 1980);
   console.log("Entrepreneurs nés dans les années 70:");
@@ -24,6 +8,7 @@ function seventies(array) {
   return result;
 }
 
+// array des prénoms noms
 function names(array) {
   let result = [];
   array.forEach((e) => {
@@ -34,6 +19,7 @@ function names(array) {
   return result;
 }
 
+// calculs des âges
 function ages(array) {
   let result = array.map((value) => 
     new_value = {
@@ -48,6 +34,7 @@ function ages(array) {
   return result;
 }
 
+// classer par ordre alpha des Noms (attention casse)
 function alphaOrder(array){
   array.sort((a, b) => {
     let nameA = a.last.toUpperCase();
@@ -66,6 +53,7 @@ function alphaOrder(array){
 
 }
 
+//menu des fonctions + choix user
 function getUserInput() {
   let string = "****** Script 4 : Startup Nation *****\n\n";
   string += "[1] Entrepreneurs nés dans les années 70\n";
@@ -79,6 +67,24 @@ function getUserInput() {
   return user_input;
 }
 
+// affichage de l'array
+function print(array) {
+  let string = "";
+  for (let value of array) {
+    if (typeof value == "string") {
+      string += value + "\n";
+    } else {
+      string += `${value.first} ${value.last} (${value.year})`;
+      if (value.age) {
+        string += ` Age: ${value.age} ans`;
+      }
+      string += "\n";
+    }
+  }
+  return string;
+}
+
+// perform menu et choix user pour chaque fonction
 function perform(){
   let user_input = getUserInput();
     switch (user_input) {
