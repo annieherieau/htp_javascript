@@ -9,7 +9,6 @@ function getUserInput() {
   string += "[4] Trouve le livre avec l'ID: 873495\n";
   string += "[5] Supprime le livre avec l'ID: 133712\n";
   string += "[6] Trie les livres par ordre alphabétique\n";
-  string += "[q] Quitter\n";
   let user_input = prompt(
     string
   );
@@ -18,15 +17,15 @@ function getUserInput() {
 
 // afficher l'array
 function print(array) {
-  let string = "";
+  let string = "<ul>";
   for (let value of array) {
     if (typeof value == "string") {
-      string += value + "\n";
+      string += "<li>" + value + "</li>";
     } else {
-      string += value.title;
-      string += "\n";
+      string += "<li>" + value.title + "</li>";
     }
   }
+  string += "<ul>";
   return string;
 }
 
@@ -74,7 +73,6 @@ function findBook(array, id){
       break;
     } 
   }
-  console.log(`Trouve le livre avec l'ID: 873495\n${result}`);
   return result;
 }
 
@@ -116,39 +114,31 @@ function sortBooks(array){
 // perform avec menu des 6 fonction
 function perform(){
   let id = '';
+  TITLE.innerHTML = "Script 5 : Bibliothécaire";
   let user_input = getUserInput();
     switch (user_input) {
       case '1': 
-        alert(`Est-ce que tous les livres ont été au moins empruntés une fois:\n ${borrowedOnce(books)}`);
-        perform();
+      OUTPUT_1.innerHTML= "<strong>Est-ce que tous les livres ont été au moins empruntés une fois:</strong><br><br>" + borrowedOnce(books);
         break;
       case '2': 
-        alert(`Quel est livre le plus emprunté ?\n ${moreBorrowed(books)}`);
-        perform();
+      OUTPUT_1.innerHTML= "<strong>Quel est livre le plus emprunté ?</strong><br><br>" + moreBorrowed(books);
         break;
       case '3': 
-        alert(`Quel est le livre le moins emprunté ?\n ${lessBorrowed(books)}`);
-        perform();
+      OUTPUT_1.innerHTML= "<strong>Quel est le livre le moins emprunté ?</strong><br><br>" + lessBorrowed(books);
         break;
       case '4':
         id = 873495;
-        alert(`Trouve le livre avec l'ID: 873495\n ${findBook(books, id)}`);
-        perform();
+        OUTPUT_1.innerHTML= "<strong>Trouve le livre avec l'ID: 873495</strong><br><br>" + findBook(books, id);
         break;
       case '5': 
         id= 133712;
-        alert(`Supprime le livre avec l'ID: 133712 (${findBook(books, id)})\n ${print(deleteBook(books, id))}`);
-        perform();
+        OUTPUT_1.innerHTML= "<strong>Supprime le livre avec l'ID: 133712</strong><br><br>" + findBook(books, id) + "<br>" + print(deleteBook(books, id));
         break;
       case '6': 
         id= 133712;
-        alert(`Trie les livres par ordre alphabétique (sans ID: 133712)\n ${print(sortBooks(deleteBook(books, id)))}`);
-        perform();
+        OUTPUT_1.innerHTML= "<strong>Trie les livres par ordre alphabétique (sans ID: 133712)</strong><br><br>" + print(sortBooks(deleteBook(books, id)));
         break;
-      case 'q':
-        break; 
       default:
-        perform()
         break;
   }
 }
