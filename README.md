@@ -7,6 +7,7 @@ Outputs in Window.alert() and console.
 
 ## Demo
 
-bit.ly/3TfRBud
+https://bit.ly/3TfRBud
+
 
 
