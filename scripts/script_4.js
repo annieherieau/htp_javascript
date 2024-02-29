@@ -1,5 +1,3 @@
-
-
 // nés dans les années 70: filtrer [1970-1980[
 function seventies(array) {
   let result = array.filter((val) => val.year >= 1970 && val.year < 1980);
@@ -12,8 +10,6 @@ function names(array) {
   array.forEach((e) => {
     result.push(`${e.first} ${e.last}`);
   });
-  console.log("Prénoms noms :");
-  console.log(result);
   return result;
 }
 
@@ -27,8 +23,6 @@ function ages(array) {
       age: 2024 - value.year
     }
   );
-  console.log("Ages :");
-  console.log(result);
   return result;
 }
 
@@ -45,8 +39,6 @@ function alphaOrder(array){
     }
     return 0;
   })
-  console.log("Ordre alphabetique des noms :")
-  console.log(array)
   return array
 
 }
@@ -58,7 +50,6 @@ function getUserInput() {
   string += "[2] Prénoms noms\n";
   string += "[3] Ages\n";
   string += "[4] Ordre alphabetique des noms\n";
-  string += "[q] Quitter\n";
   let user_input = prompt(
     string
   );
@@ -94,7 +85,6 @@ function perform(){
         break;
       case '2': 
         OUTPUT_1.innerHTML= "<strong>Prénoms et Noms :</strong><br><br>" + print(names(entrepreneurs));
-
         break;
       case '3': 
         OUTPUT_1.innerHTML= "<strong>Ages :</strong><br><br>" + print(ages(entrepreneurs));
@@ -105,7 +95,6 @@ function perform(){
       default:
         break;
   }
-
 }
 
 perform();
