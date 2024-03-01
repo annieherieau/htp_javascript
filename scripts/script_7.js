@@ -1,8 +1,5 @@
-// phrase du user
-function getUserInput(){
-  let user_input = prompt("****** Script 7 : Acné-Bot ******\n[q] Quitter\nÉcris une phrase :");
-  return user_input;
-}
+title= "Script 7 : Acné-Bot";
+output= "Écris une phrase :";
 
 // 1. c'est une question ?
 function isQuestion(input){
@@ -25,6 +22,7 @@ function playGame(input){
 
 // 4. vide => PLS
 function isEmpty(input){
+  OUTPUT_2.className = "visible";
   return input ? false : "T'es en PLS ?";
 }
 
@@ -39,8 +37,8 @@ function acneBot(input){
 
 // Exécution
 function perform(){
-  TITLE.innerHTML = "Script 7 : Acné-Bot";
-  OUTPUT_1.innerHTML = acneBot(getUserInput());
+  loadText(title, output, label);
+  OUTPUT_2.innerHTML = acneBot(USER_INPUT.value);
 }
 
-perform();
+loadText(title, output, label);

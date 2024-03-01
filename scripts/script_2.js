@@ -1,3 +1,6 @@
+title= "Script 2 : Factorielles";
+output= "De quel nombre veux-tu calculer la factorielle ?";
+label= "Nombre entier positif";
 // Suite des facteurs
 function factorial(number) {
   let array = []
@@ -28,13 +31,15 @@ function validateInput(){
 }
 
 function perform(){
-  let user_input = getUserInput();
+  loadText(title, output, label);
+  let user_input = USER_INPUT.value;
   let factor_numbers = factorial(user_input);
   let factor = factorResult(factor_numbers);
   let factorString = factor_numbers.join(' * ');
   let string = `La factorielle de ${user_input} est :<br> ${factorString} = ${factor}`;
-  TITLE.innerHTML = "Script 2 : Factorielles";
-  OUTPUT_1.innerHTML = string;
+  OUTPUT_2.innerHTML = string;
 }
 
-perform();
+
+
+loadText(title, output, label);

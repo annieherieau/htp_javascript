@@ -8,6 +8,18 @@ function changeScript(value) {
   document.getElementById("myScript").appendChild(s);
 }
 
+function loadText(title, output, label){
+  TITLE.innerHTML = title;
+  OUTPUT_1.innerHTML = output;
+  LABEL.innerHTML = label;
+  FORM_CONTAINER.className = "visible";
+  USER_INPUT.value ? OUTPUT_2.className= "visible" : OUTPUT_2.className= "invisible";
+}
+
+let title= "";
+let output= "";
+let label= "";
+
 // Eléments HTML
 const TITLE =document.getElementById('script_title');
 const OUTPUT_1 =document.getElementById('output_1');

@@ -1,18 +1,16 @@
-console.log("****** Script 5 : Bibliothécaire ******\n ");
+title= "Script 5 : Bibliothécaire";
+output= menu();
+label= "Ton choix";
 
 // menu et choix du user
-function getUserInput() {
-  let string = "****** Script 5 : Bibliothécaire ******\n\n";
-  string += "[1] Est-ce que tous les livres ont été au moins empruntés une fois\n";
-  string += "[2] Quel est livre le plus emprunté ?\n";
-  string += "[3] Quel est le livre le moins emprunté ?\n";
-  string += "[4] Trouve le livre avec l'ID: 873495\n";
-  string += "[5] Supprime le livre avec l'ID: 133712\n";
-  string += "[6] Trie les livres par ordre alphabétique\n";
-  let user_input = prompt(
-    string
-  );
-  return user_input;
+function menu() {
+  let string = "[1] Est-ce que tous les livres ont été au moins empruntés une fois<br>";
+  string += "[2] Quel est livre le plus emprunté ?<br>";
+  string += "[3] Quel est le livre le moins emprunté ?<br>";
+  string += "[4] Trouve le livre avec l'ID: 873495<br>";
+  string += "[5] Supprime le livre avec l'ID: 133712<br>";
+  string += "[6] Trie les livres par ordre alphabétique<br>";
+  return string;
 }
 
 // afficher l'array
@@ -39,8 +37,6 @@ function borrowedOnce(array){
     }
     }
   result = result ? 'oui' : 'non';
-  console.log("Est-ce que tous les livres ont été au moins empruntés une fois:\n");
-  console.log(result);
   return result;
 }
 
@@ -49,8 +45,6 @@ function moreBorrowed(array){
   let result = array.reduce(
     (acc, val) => { return (acc && acc.rented > val.rented) ? acc : val; }
   )
-  console.log("Quel est livre le plus emprunté ?\n");
-  console.log(`${result.title} (${result.rented} fois)`);
   return `${result.title} (${result.rented} fois)`;
 }
 
@@ -59,8 +53,6 @@ function lessBorrowed(array){
   let result = array.reduce(
     (acc, val) => { return (acc && acc.rented < val.rented) ? acc : val; }
   )
-  console.log("Quel est livre le moins emprunté ?\n");
-  console.log(`${result.title} (${result.rented} fois)`);
   return `${result.title} (${result.rented} fois)`;
 }
 
@@ -88,8 +80,6 @@ function deleteBook(array, id){
     }
   }
   array.splice(result_id, 1);
-  console.log(`Supprime le livre avec l'ID: 133712 (${array[result_id].title})`);
-  console.log(array);
   return array;
 }
 
@@ -113,34 +103,34 @@ function sortBooks(array){
 
 // perform avec menu des 6 fonction
 function perform(){
+  loadText(title, output, label);
+  let array =books;
   let id = '';
-  TITLE.innerHTML = "Script 5 : Bibliothécaire";
-  let user_input = getUserInput();
-    switch (user_input) {
+    switch (USER_INPUT.value) {
       case '1': 
-      OUTPUT_1.innerHTML= "<strong>Est-ce que tous les livres ont été au moins empruntés une fois:</strong><br><br>" + borrowedOnce(books);
+      OUTPUT_2.innerHTML= "<strong>Est-ce que tous les livres ont été au moins empruntés une fois:</strong><br><br>" + borrowedOnce(books);
         break;
       case '2': 
-      OUTPUT_1.innerHTML= "<strong>Quel est livre le plus emprunté ?</strong><br><br>" + moreBorrowed(books);
+      OUTPUT_2.innerHTML= "<strong>Quel est livre le plus emprunté ?</strong><br><br>" + moreBorrowed(books);
         break;
       case '3': 
-      OUTPUT_1.innerHTML= "<strong>Quel est le livre le moins emprunté ?</strong><br><br>" + lessBorrowed(books);
+      OUTPUT_2.innerHTML= "<strong>Quel est le livre le moins emprunté ?</strong><br>" + lessBorrowed(books);
         break;
       case '4':
         id = 873495;
-        OUTPUT_1.innerHTML= "<strong>Trouve le livre avec l'ID: 873495</strong><br><br>" + findBook(books, id);
+        OUTPUT_2.innerHTML= "<strong>Trouve le livre avec l'ID: 873495</strong><br>" + findBook(books, id);
         break;
       case '5': 
-        id= 133712;
-        OUTPUT_1.innerHTML= "<strong>Supprime le livre avec l'ID: 133712</strong><br><br>" + findBook(books, id) + "<br>" + print(deleteBook(books, id));
+        array = deleteBook(array, 133712);
+        OUTPUT_2.innerHTML= "<strong>Supprime le livre avec l'ID: 133712</strong> (" + findBook(books, id) + ")<br>" + print(array);
         break;
       case '6': 
         id= 133712;
-        OUTPUT_1.innerHTML= "<strong>Trie les livres par ordre alphabétique (sans ID: 133712)</strong><br><br>" + print(sortBooks(deleteBook(books, id)));
+        OUTPUT_2.innerHTML= "<strong>Trie les livres par ordre alphabétique (sans ID: 133712)</strong><br><br>" + print(sortBooks(array));
         break;
       default:
         break;
   }
 }
 
-perform();
+loadText(title, output, label);
