@@ -1,3 +1,5 @@
+title= "Script 6 : Code la vie";
+output= "Écris ta séquence ARN :";
 
 // décoper ARN par triplet (return array)
 function getCodons(rna_string){
@@ -27,19 +29,13 @@ function print(array){
   return array.join('-');
 }
 
-function perform(rna){
-
-  let codons = getCodons(rna);
+function perform(){
+  loadText(title, output, label);
+  let codons = getCodons(USER_INPUT.value);
   let amino_acids = decodeRna(codons);
-  let string = `${print(codons)}<br>${print(amino_acids)}`;
+  let string = print(amino_acids);
+  OUTPUT_2.innerHTML = string;
 
-  TITLE.innerHTML = "Script 6 : Code la vie";
-  if (OUTPUT_1.innerHTML == ''){
-    OUTPUT_1.innerHTML = rna + "<br>" + string;
-  }else{
-    OUTPUT_2.innerHTML = rna + "<br>" + string;
-  }
 }
 
-perform('CCGUCGUUGCGCUACAGC');
-perform('CCUCGCCGGUACUUCUCG');
+loadText(title, output, label);
