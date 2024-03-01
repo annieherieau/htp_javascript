@@ -59,14 +59,14 @@ function lessBorrowed(array) {
 
 // trouver le livre avec id
 function findBook(array, id) {
-  let result = false;
+  let result;
   for (let book of array) {
-    if (book.id == parseInt(id)) {
-      result = book.title;
+    if (book.id == id) {
+     result = book.title;
       break;
     }
   }
-  return result;
+  return result ?? 'aucun livre trouvé';
 }
 
 // supprimer un livre
@@ -125,7 +125,7 @@ function perform() {
       break;
     case "4":
       id = 873495;
-      OUTPUT_2.innerHTML =
+      OUTPUT_2.innerHTML = 
         "<strong>Trouve le livre avec l'ID: 873495</strong><br>" +
         findBook(books, id);
       break;
