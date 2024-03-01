@@ -1,3 +1,7 @@
+title= "Script 4 : Startup Nation";
+output= menu();
+label= "Ton choix";
+
 // nés dans les années 70: filtrer [1970-1980[
 function seventies(array) {
   let result = array.filter((val) => val.year >= 1970 && val.year < 1980);
@@ -44,16 +48,12 @@ function alphaOrder(array){
 }
 
 //menu des fonctions + choix user
-function getUserInput() {
-  let string = "****** Script 4 : Startup Nation *****\n\n";
-  string += "[1] Entrepreneurs nés dans les années 70\n";
-  string += "[2] Prénoms noms\n";
-  string += "[3] Ages\n";
-  string += "[4] Ordre alphabetique des noms\n";
-  let user_input = prompt(
-    string
-  );
-  return user_input;
+function menu() {
+  let string = "[1] Entrepreneurs nés dans les années 70<br>";
+  string += "[2] Prénoms noms<br>";
+  string += "[3] Ages<br>";
+  string += "[4] Ordre alphabetique des noms<br>";
+  return string;
 }
 
 // affichage de l'array
@@ -76,25 +76,24 @@ function print(array) {
 
 // perform menu et choix user pour chaque fonction
 function perform(){
-  TITLE.innerHTML = "Script 4 : Startup Nation";
-  
-  let user_input = getUserInput();
-    switch (user_input) {
+  loadText(title, output, label);
+
+    switch (USER_INPUT.value) {
       case '1': 
-        OUTPUT_1.innerHTML= "<strong>Entrepreneurs nés dans les années 70:</strong><br><br>" + print(seventies(entrepreneurs));
+        OUTPUT_2.innerHTML= "<strong>Entrepreneurs nés dans les années 70:</strong><br><br>" + print(seventies(entrepreneurs));
         break;
       case '2': 
-        OUTPUT_1.innerHTML= "<strong>Prénoms et Noms :</strong><br><br>" + print(names(entrepreneurs));
+        OUTPUT_2.innerHTML= "<strong>Prénoms et Noms :</strong><br><br>" + print(names(entrepreneurs));
         break;
       case '3': 
-        OUTPUT_1.innerHTML= "<strong>Ages :</strong><br><br>" + print(ages(entrepreneurs));
+        OUTPUT_2.innerHTML= "<strong>Ages :</strong><br><br>" + print(ages(entrepreneurs));
         break;
       case '4': 
-        OUTPUT_1.innerHTML= "<strong>Ordre alphabetique des noms :</strong><br><br>" + print(alphaOrder(entrepreneurs));
+        OUTPUT_2.innerHTML= "<strong>Ordre alphabetique des noms :</strong><br><br>" + print(alphaOrder(entrepreneurs));
         break;
       default:
         break;
   }
 }
 
-perform();
+loadText(title, output, label);
