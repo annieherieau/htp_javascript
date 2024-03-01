@@ -79,7 +79,9 @@ function deleteBook(array, id){
       break;
     }
   }
-  array.splice(result_id, 1);
+  if (result_id){
+    array.splice(result_id, 1);
+  } 
   return array;
 }
 
