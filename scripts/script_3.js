@@ -1,11 +1,6 @@
-
-// choix du user
-function getUserInput() {
-  let user_input = prompt(
-    "****** Script 3 : Pyramide de Mario ******\nCombien d'étages veux-tu ?"
-  );
-  return user_input;
-}
+title= "Script 3 : Pyramide de Mario";
+output= "Combien d'étages veux-tu ?";
+label= "Nombre entier positif";
 
 // afficher une pyramide inversée
 function pyramid(number){
@@ -14,10 +9,13 @@ let j = number;
   for (let i = 1; i <= number; i++) {
     string +='&nbsp;&nbsp;&nbsp;'.repeat(j-i) + '#'.repeat(i)+'<br>';
   }
-
-  TITLE.innerHTML = "Script 3 : Pyramide de Mario";
-  OUTPUT_1.innerHTML = string ;
+  return string ;
 }
 
-// perform
-pyramid(getUserInput())
+function perform(){
+  loadText(title, output, label);
+  OUTPUT_2.innerHTML = pyramid(USER_INPUT.value);
+}
+
+
+loadText(title, output, label);
