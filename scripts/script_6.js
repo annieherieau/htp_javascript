@@ -37,5 +37,5 @@ function perform(){
   OUTPUT_2.innerHTML = string;
 
 }
-
+clear();
 loadText(title, output, label);

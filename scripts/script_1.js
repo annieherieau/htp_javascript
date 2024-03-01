@@ -11,5 +11,5 @@ function perform(){
   OUTPUT_2.innerHTML = 'Bonjour '+ name ;
 }
 
-
+clear();
 loadText(title, output, label);

@@ -96,5 +96,5 @@ function perform(){
         break;
   }
 }
-
+clear();
 loadText(title, output, label);

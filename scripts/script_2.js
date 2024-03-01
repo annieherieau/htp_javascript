@@ -42,5 +42,5 @@ function perform(){
 }
 
 
-
+clear();
 loadText(title, output, label);

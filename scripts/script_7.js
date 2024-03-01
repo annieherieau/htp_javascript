@@ -42,4 +42,5 @@ function perform(){
   OUTPUT_2.innerHTML = acneBot(USER_INPUT.value);
 }
 
+clear();
 loadText(title, output, label);
