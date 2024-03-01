@@ -1,5 +1,6 @@
 title= "Script 7 : Acné-Bot";
 output= "Écris une phrase :";
+OUTPUT_2.innerHTML = "";
 
 // 1. c'est une question ?
 function isQuestion(input){

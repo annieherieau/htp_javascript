@@ -1,6 +1,6 @@
 title= "Script 6 : Code la vie";
 output= "Écris ta séquence ARN :";
-
+OUTPUT_2.innerHTML = "";
 // décoper ARN par triplet (return array)
 function getCodons(rna_string){
   return rna_string.match(/.{1,3}/g) || []; // séparation tous les 3 caractères 

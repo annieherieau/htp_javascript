@@ -1,6 +1,8 @@
 title= "Script 1 : Bonjour";
 output= "Comment t'appelles-tu ?";
 label= "Ton prénom : ";
+OUTPUT_2.innerHTML = "";
+
 function perform(){
   loadText(title, output, label);
   OUTPUT_2.className = 'visible';

@@ -1,6 +1,7 @@
 title= "Script 3 : Pyramide de Mario";
 output= "Combien d'étages veux-tu ?";
 label= "Nombre entier positif";
+OUTPUT_2.innerHTML = "";
 
 // afficher une pyramide inversée
 function pyramid(number){

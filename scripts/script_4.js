@@ -1,6 +1,7 @@
 title= "Script 4 : Startup Nation";
 output= menu();
 label= "Ton choix";
+OUTPUT_2.innerHTML = "";
 
 // nés dans les années 70: filtrer [1970-1980[
 function seventies(array) {
