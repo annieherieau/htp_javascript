@@ -1,6 +1,6 @@
-title= "Script 4 : Startup Nation";
-output= menu();
-label= "Ton choix";
+title = "Script 4 : Startup Nation";
+output = menu();
+label = "Ton choix";
 OUTPUT_2.innerHTML = "";
 
 // nés dans les années 70: filtrer [1970-1980[
@@ -20,32 +20,32 @@ function names(array) {
 
 // calculs des âges
 function ages(array) {
-  let result = array.map((value) => 
-    new_value = {
-      first: value.first,
-      last: value.last,
-      year: value.year,
-      age: 2024 - value.year
-    }
+  let result = array.map(
+    (value) =>
+      (new_value = {
+        first: value.first,
+        last: value.last,
+        year: value.year,
+        age: 2024 - value.year,
+      })
   );
   return result;
 }
 
 // classer par ordre alpha des Noms (attention casse)
-function alphaOrder(array){
+function alphaOrder(array) {
   array.sort((a, b) => {
     let nameA = a.last.toUpperCase();
     let nameB = b.last.toUpperCase();
-    if (nameA < nameB){
+    if (nameA < nameB) {
       return -1;
     }
-    if (nameA > nameB){
+    if (nameA > nameB) {
       return 1;
     }
     return 0;
-  })
-  return array
-
+  });
+  return array;
 }
 
 //menu des fonctions + choix user
@@ -76,24 +76,31 @@ function print(array) {
 }
 
 // perform menu et choix user pour chaque fonction
-function perform(){
+function perform() {
   loadText(title, output, label);
 
-    switch (USER_INPUT.value) {
-      case '1': 
-        OUTPUT_2.innerHTML= "<strong>Entrepreneurs nés dans les années 70:</strong><br><br>" + print(seventies(entrepreneurs));
-        break;
-      case '2': 
-        OUTPUT_2.innerHTML= "<strong>Prénoms et Noms :</strong><br><br>" + print(names(entrepreneurs));
-        break;
-      case '3': 
-        OUTPUT_2.innerHTML= "<strong>Ages :</strong><br><br>" + print(ages(entrepreneurs));
-        break;
-      case '4': 
-        OUTPUT_2.innerHTML= "<strong>Ordre alphabetique des noms :</strong><br><br>" + print(alphaOrder(entrepreneurs));
-        break;
-      default:
-        break;
+  switch (USER_INPUT.value) {
+    case "1":
+      OUTPUT_2.innerHTML =
+        "<strong>Entrepreneurs nés dans les années 70:</strong><br><br>" +
+        print(seventies(entrepreneurs));
+      break;
+    case "2":
+      OUTPUT_2.innerHTML =
+        "<strong>Prénoms et Noms :</strong><br><br>" +
+        print(names(entrepreneurs));
+      break;
+    case "3":
+      OUTPUT_2.innerHTML =
+        "<strong>Ages :</strong><br><br>" + print(ages(entrepreneurs));
+      break;
+    case "4":
+      OUTPUT_2.innerHTML =
+        "<strong>Ordre alphabetique des noms :</strong><br><br>" +
+        print(alphaOrder(entrepreneurs));
+      break;
+    default:
+      break;
   }
 }
 clear();
