@@ -16,6 +16,12 @@ function loadText(title, output, label){
   USER_INPUT.value ? OUTPUT_2.className= "visible" : OUTPUT_2.className= "invisible";
 }
 
+function clear(){
+  USER_INPUT.value = "";
+  OUTPUT_2.innerHTML = "";
+  OUTPUT_2.className = "invisible";
+}
+
 let title= "";
 let output= "";
 let label= "";

@@ -1,6 +1,7 @@
 title= "Script 2 : Factorielles";
 output= "De quel nombre veux-tu calculer la factorielle ?";
 label= "Nombre entier positif";
+OUTPUT_2.innerHTML = "";
 // Suite des facteurs
 function factorial(number) {
   let array = []
@@ -41,5 +42,5 @@ function perform(){
 }
 
 
-
+clear();
 loadText(title, output, label);
