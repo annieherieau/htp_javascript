@@ -1,7 +1,7 @@
 title= "Script 5 : Bibliothécaire";
 output= menu();
 label= "Ton choix";
-
+OUTPUT_2.innerHTML = "";
 // menu et choix du user
 function menu() {
   let string = "[1] Est-ce que tous les livres ont été au moins empruntés une fois<br>";
@@ -132,5 +132,5 @@ function perform(){
         break;
   }
 }
-
+clear();
 loadText(title, output, label);
