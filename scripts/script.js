@@ -8,34 +8,35 @@ function changeScript(value) {
   document.getElementById("myScript").appendChild(s);
 }
 
-function loadText(title, output, label){
+function loadText(title, output, label) {
   TITLE.innerHTML = title;
   OUTPUT_1.innerHTML = output;
   LABEL.innerHTML = label;
   FORM_CONTAINER.className = "visible";
-  USER_INPUT.value ? OUTPUT_2.className= "visible" : OUTPUT_2.className= "invisible";
+  USER_INPUT.value
+    ? (OUTPUT_2.className = "visible")
+    : (OUTPUT_2.className = "invisible");
 }
 
-function clear(){
+function clear() {
   USER_INPUT.value = "";
   OUTPUT_2.innerHTML = "";
   OUTPUT_2.className = "invisible";
 }
 
-let title= "";
-let output= "";
-let label= "";
+let title = "";
+let output = "";
+let label = "";
 
 // Eléments HTML
-const TITLE =document.getElementById('script_title');
-const OUTPUT_1 =document.getElementById('output_1');
-const FORM_CONTAINER =document.getElementById('form_container');
-const HIDDEN = document.getElementById('hidden');
-const LABEL = document.getElementById('input_label');
-const USER_INPUT = document.getElementById('user_input');
-const HELP_TEXT = document.getElementById('helpText');
-const OUTPUT_2 =document.getElementById('output_2');
-
+const TITLE = document.getElementById("script_title");
+const OUTPUT_1 = document.getElementById("output_1");
+const FORM_CONTAINER = document.getElementById("form_container");
+const HIDDEN = document.getElementById("hidden");
+const LABEL = document.getElementById("input_label");
+const USER_INPUT = document.getElementById("user_input");
+const HELP_TEXT = document.getElementById("helpText");
+const OUTPUT_2 = document.getElementById("output_2");
 
 const entrepreneurs = [
   { first: "Steve", last: "Jobs", year: 1955 },
