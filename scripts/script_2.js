@@ -28,13 +28,21 @@ function validateInput(){
 }
 
 function perform(){
-  let user_input = getUserInput();
+  loadText();
+  let user_input = USER_INPUT.value;
   let factor_numbers = factorial(user_input);
   let factor = factorResult(factor_numbers);
   let factorString = factor_numbers.join(' * ');
   let string = `La factorielle de ${user_input} est :<br> ${factorString} = ${factor}`;
-  TITLE.innerHTML = "Script 2 : Factorielles";
-  OUTPUT_1.innerHTML = string;
+  OUTPUT_2.innerHTML = string;
 }
 
-perform();
+function loadText(){
+  TITLE.innerHTML = "Script 2 : Factorielles";
+  OUTPUT_1.innerHTML = "De quel nombre veux-tu calculer la factorielle ?";
+  LABEL.innerHTML = "Nombre entier positif";
+  FORM_CONTAINER.className = "visible";
+  USER_INPUT.value ? OUTPUT_2.className= "visible" : OUTPUT_2.className= "invisible";
+}
+
+loadText();
